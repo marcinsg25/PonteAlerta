@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ponte Alerta - Guia Digital de Melhorias Urbanas</title>
+    
+    <!-- Estilos principais do site -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Biblioteca Leaflet para mapas interativos -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+</head>
+
+<body>
+    <!-- Cabeçalho com identificação do projeto -->
+    <header>
+        <div class="topo">
+            <h1>🏙️ Ponte Alerta</h1>
+            <p>Guia Digital de Solicitação de Melhorias Urbanas<br>
+            Ponte Alta Norte - Gama/DF</p>
+        </div>
+        
+        <!-- DIV ACESSIBILIDADE-->
+        <div class="div-acessibilidade">
+            
+             <!-- DIV INFMATIVA FERRAMENTAS DE ACESSIBILIDADE-->
+            <div class="info-acessibilidade">
+               
+                <p class="texto-info">
+                    <strong> <span class="icone-info">♿</span> Ferramentas de Acessibilidade:</strong><br>
+                    Ajuste o tamanho do texto e o contraste da tela conforme sua necessidade visual
+                </p>
+            </div>
+            
+
+             <!-- DIV BOTOES-->
+            <div class="botoes-acessibilidade">
+                  <!-- Botão para aumentar o tamanho da fonte -->
+                <button id="aumentar" title="Clique para aumentar o tamanho das letras" aria-label="Aumentar tamanho do texto">
+                    <span class="simbolo">A+</span>
+                    <span class="descricao">Aumentar Texto</span>
+                </button>
+                
+                <!-- Botão para diminuir o tamanho da fonte -->
+                <button id="diminuir" title="Clique para diminuir o tamanho das letras" aria-label="Diminuir tamanho do texto">
+                    <span class="simbolo">A-</span>
+                    <span class="descricao">Diminuir Texto</span>
+                </button>
+                
+                <!--  Botão de alto contraste:-->
+                <button id="contraste" title="Ative para melhor visualização (fundo escuro com letras claras)" aria-label="Ativar alto contraste">
+                    <span class="simbolo">◐</span>
+                    <span class="descricao">Alto Contraste</span>
+                </button>
+            </div>
+
+            <!--DIV STATUS ATUAL CONTRASTE-->
+            <div id="status-contraste" class="status-acessibilidade" style="display: none;">
+                <p>✅ Modo Alto Contraste Ativado - Cores invertidas para melhor leitura</p>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- Campo de busca para filtrar os serviços disponíveis -->
+    <section class="busca">
+        <h2>Qual problema você precisa resolver?</h2>
+        <input type="text" id="pesquisa" 
+               placeholder="Digite: buraco, iluminação, água, lixo, poda..."
+               aria-label="Pesquisar serviços disponíveis">
+        <p class="ajuda-busca">💡 Digite uma palavra-chave para encontrar o serviço desejado rapidamente</p>
+    </section>
+
+
+
+
+
+    <!-- Grade de serviços organizados por categorias -->
+    <section id="servicos">
+        
+        <!-- Card 1: Serviço de tapa-buracos -->
+        <div class="card" role="article" aria-labelledby="titulo-buracos">
+            <h3 id="titulo-buracos">🕳️ Buracos nas Ruas</h3>
+            <p>Solicitação de tapa-buracos e manutenção viária para a Novacap.</p>
+            
+            <!-- Botões de ação rápida -->
+            <a href="tel:162" class="btn-acao" aria-label="Ligar para Ouvidoria 162">📞 Ligar 162</a>
+            <a href="https://www.participa.df.gov.br/pages/registro-manifestacao/relato" target="_blank" class="btn-acao" aria-label="Acessar site Participa DF">🔗 Participa DF</a>
+            
+            <!-- Passo a passo-->
+            <div class="passos">
+                <h4>📋 Como solicitar:</h4>
+                <ol>
+                    <li>Tire uma foto do buraco (se possível).</li>
+                    <li>Anote o endereço completo com ponto de referência.</li>
+                    <li>Ligue 162 ou acesse o site Participa DF.</li>
+                    <li>Informe os detalhes e anexe a foto.</li>
+                </ol>
+                <p><strong>Órgão responsável:</strong> Ouvidoria GDF / Novacap</p>
+            </div>
+        </div>
+
+
+
+        <!-- Card 2: Serviço de iluminação pública -->
+        <div class="card" role="article" aria-labelledby="titulo-iluminacao">
+            <h3 id="titulo-iluminacao">💡 Falta de Iluminação</h3>
+            <p>Problemas com postes apagados, luzes queimadas ou defeitos na iluminação pública.</p>
+            
+            <!-- Passo a passo-->
+            <div class="passos">
+                <h4>📋 Como solicitar:</h4>
+                <ol>
+                    <li>Localize o número do poste (plaqueta metálica fixada no poste).</li>
+                    <li>Anote o endereço completo e pontos de referência próximos (comércios, esquinas, etc.).</li>
+                    <li>Escolha um dos canais de atendimento:
+                        <ul>
+                            <li><strong>Telefone:</strong> Ligue 155 (Central de Atendimento CEB Ipes)</li>
+                            <a href="tel:155" class="btn-acao" aria-label="Ligar para CEB Ipes 155">📞 Ligar 155</a>
+                            <li><strong>App:</strong> Use o Ilumina DF para marcar o local exato no mapa</li>
+                            <a href="https://apps.apple.com/br/app/ilumina-df/id1577581241" target="_blank" class="btn-acao" aria-label="Baixar app Ilumina DF para iOS">📱 App iOS</a>
+                            <a href="https://play.google.com/store/apps/details?id=br.com.exati.brasiliailuminada.novo&hl=pt_BR" target="_blank" class="btn-acao" aria-label="Baixar app Ilumina DF para Android">📱 App Android</a>
+                            <li><strong>Internet:</strong> Acesse o portal Brasília Cidade Iluminada</li>
+                            <a href="https://brasilia.cidadeiluminada.com.br/#" target="_blank" class="btn-acao" aria-label="Acessar portal Brasília Cidade Iluminada">🔗 Portal</a>
+                    
+            
+                        </ul>
+                    </li>
+                    <li>Informe os dados do local e descreva o problema (luz apagada, piscando, poste danificado, etc.).</li>
+                </ol>
+                <p><strong>Órgão responsável:</strong> CEB Ipes (Companhia Energética de Brasília)</p>
+                <p><small>💡 Dica: Quanto mais informações precisas, mais rápido será o atendimento!</small></p>
+            </div>
+        </div>
+
+
+        
+       <!-- Card 3: Serviço de roçagem de mato em via pública -->
+        <div class="card" role="article" aria-labelledby="titulo-rocagem">
+            <h3 id="titulo-rocagem">🌿 Roçagem de Mato</h3>
+            <p>Limpeza de terrenos baldios, calçadas e vias públicas com vegetação alta.</p>
+            
+            <a href="tel:162" class="btn-acao" aria-label="Ligar para Ouvidoria 162">📞 Ligar 162</a>
+            <a href="https://www.participa.df.gov.br/pages/registro-manifestacao/relato" target="_blank" class="btn-acao" aria-label="Acessar site Participa DF">🔗 Participa DF</a>
+            
+            <div class="passos">
+                <h4>📋 Como solicitar:</h4>
+                <ol>
+                    <li>Tire uma foto do local com o mato alto (se possível).</li>
+                    <li>Anote o endereço completo com ponto de referência.</li>
+                    <li>Informe se é terreno baldio ou via pública.</li>
+                    <li>Registre pelo telefone 162 ou site Participa DF.</li>
+                </ol>
+                <p><strong>Órgão responsável:</strong> Administração Regional do Gama / SLU</p>
+            </div>
+        </div>
+
+        <!-- Card 4: Serviço de coleta de lixo -->
+        <div class="card" role="article" aria-labelledby="titulo-lixo">
+            <h3 id="titulo-lixo">🗑️ Coleta de Lixo</h3>
+            <p>Acúmulo de resíduos, coleta irregular ou descarte inadequado.</p>
+            
+            <a href="tel:162" class="btn-acao" aria-label="Ligar para Ouvidoria 162">📞 Ouvidoria 162</a>
+            <a href="https://www.slu.df.gov.br" target="_blank" class="btn-acao" aria-label="Acessar site SLU">🔗 Site SLU</a>
+            
+            <div class="passos">
+                <h4>📋 Como solicitar:</h4>
+                <ol>
+                    <li>Identifique o tipo de resíduo acumulado.</li>
+                    <li>Anote o endereço e a data do acúmulo.</li>
+                    <li>Contate a SLU pelo site ou Ouvidoria 162.</li>
+                </ol>
+                <p><strong>Órgão responsável:</strong> SLU (Serviço de Limpeza Urbana)</p>
+            </div>
+        </div>
+
+       
+
+
+
+    </section>
+
+    <!-- Seção da Ouvidoria como canal alternativo -->
+    <section class="ouvidoria">
+        <h2>📞 Ouvidoria do GDF</h2>
+        <p>Se não encontrou o serviço que precisa, registre sua solicitação na Ouvidoria-Geral do Distrito Federal.</p>
+        <a href="https://www.participa.df.gov.br/pages/registro-manifestacao/relato" target="_blank" class="btn-ouvidoria" aria-label="Acessar Ouvidoria Participa DF">Acessar Participa DF</a>
+        <p><small>Telefone: 162 (funciona 24h)</small></p>
+    </section>
+
+
+    
+    <!-- Mapa interativo da região de Ponte Alta -->
+    <section class="mapa-container">
+        <h2>📍 Mapa da Região</h2>
+        <div id="mapa" role="application" aria-label="Mapa interativo da região de Ponte Alta Norte"></div>
+        <p><small>Ponte Alta Norte - Gama/DF</small></p>
+    </section>
+
+
+
+
+
+
+    <!-- Rodapé com informações do projeto -->
+    <footer>
+        <p>Projeto - Ponte Alta Alerta</p>
+         <p>Quer sugerir melhorias para o site ou novos serviços?</p>
+            <a href="marcio.alves1093@gmail.com" class="email-contato">
+                📧 marcio.alves1093@gmail.com
+            </a>
+        <p><small>Sua opinião é importante para melhorarmos este guia!</small></p>
+        <p><small>♿ Este site foi desenvolvido com recursos de acessibilidade para todos os usuários</small></p>
+    </footer>
+
+    <!-- Scripts JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

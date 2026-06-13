@@ -1,0 +1,434 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+   
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    background: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    
+    transition: all 0.3s ease; /* Transição suave para mudanças de acessibilidade */
+}
+
+
+h1, h2, h3, h4, strong {
+    font-weight: 600; 
+}
+
+h1 {
+    letter-spacing: -0.5px; /
+}
+
+/* Ajuste para o texto do cabeçalho */
+.topo h1 {
+    font-weight: 700; 
+    font-size: 2.2em;
+    letter-spacing: -0.8px;
+}
+
+.topo p {
+    font-weight: 400;
+    font-size: 1.1em;
+    opacity: 0.95;
+}
+
+
+/* Cabeçalho principal com identidade visual */
+header {
+    background: linear-gradient(135deg, #0a4ea1, #0d3b7a);
+    color: white;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* 
+  DIV principal controle de acessibilidade
+
+*/
+.div-acessibilidade {
+    margin-top: 20px;
+    background: #ffffff1a;
+    border-radius: 12px;
+    padding: 15px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* DIV que mostra utilidade das ferramentas */
+.info-acessibilidade {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background: #ffffff26;
+    border-radius: 8px;
+}
+
+.icone-info {
+    font-size: 20px;
+}
+
+.texto-info {
+    font-size: 14px;
+    margin: 0;
+    color: #e3f2fd;
+    font-weight: 400; /* Peso regular para texto corrido */
+}
+
+
+
+
+/* DIV dos botões */
+.botoes-acessibilidade {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* Estilo dos botões */
+.botoes-acessibilidade button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s;
+    min-width: 120px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-weight: 500; /* Peso médio para botões */
+}
+
+
+.botoes-acessibilidade button:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: white;
+}
+
+.botoes-acessibilidade button:focus {
+    outline: 3px solid yellow;
+    outline-offset: 2px;
+}
+
+
+
+.simbolo {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.descricao {
+    font-size: 12px;
+    opacity: 0.9;
+    font-weight: 500;
+}
+
+/* Status do alto contraste */
+.status-acessibilidade {
+    margin-top: 10px;
+    padding: 8px;
+    background: rgba(40, 167, 69, 0.2);
+    border-radius: 8px;
+    border: 1px solid rgba(40, 167, 69, 0.3);
+}
+
+.status-acessibilidade p {
+    margin: 0;
+    font-size: 13px;
+    color: #90ee90;
+    font-weight: 500;
+}
+
+
+
+/* 
+ Evento botao alto contraste 
+*/
+.alto-contraste {
+    background: black !important;
+    color: white !important;
+}
+
+.alto-contraste .card {
+    background: #222 !important;
+    color: white !important;
+    border: 1px solid #444;
+}
+
+.alto-contraste .btn-acao,
+.alto-contraste .btn-ouvidoria {
+    background: yellow !important;
+    color: black !important;
+    font-weight: bold;
+}
+
+.alto-contraste .passos {
+    background: #333 !important;
+    border-left-color: yellow !important;
+}
+
+.alto-contraste .busca {
+    background: #111 !important;
+    color: white !important;
+}
+
+.alto-contraste .ouvidoria {
+    background: #111 !important;
+    color: white !important;
+}
+
+.alto-contraste #pesquisa {
+    background: #333;
+    color: white;
+    border-color: yellow;
+}
+
+
+
+/* Seção de busca com destaque */
+.busca {
+    padding: 40px 20px;
+    text-align: center;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    margin-bottom: 30px;
+}
+
+.busca h2 {
+    margin-bottom: 20px;
+    color: #0a4ea1;
+    font-weight: 700; /* Título da busca em negrito total */
+    letter-spacing: -0.3px;
+}
+
+#pesquisa {
+    width: 90%;
+    max-width: 600px;
+    padding: 15px;
+    font-size: 18px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: border-color 0.3s;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-weight: 400;
+}
+
+#pesquisa:focus {
+    border-color: #0a4ea1;
+}
+
+.ajuda-busca {
+    margin-top: 10px;
+    color: #666;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+/* Grid responsivo para os cards de serviços */
+#servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+
+
+
+/* Estilo individual de cada card */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-3px); /* Efeito de elevação no hover */
+}
+
+.card h3 {
+    color: #0a4ea1;
+    margin-bottom: 10px;
+    font-size: 1.3em;
+    font-weight: 700; /* Títulos dos cards em negrito */
+    letter-spacing: -0.3px;
+}
+
+.card p {
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+/* Botões de ação dentro dos cards */
+.btn-acao {
+    display: inline-block;
+    margin: 8px 5px;
+    padding: 12px 18px;
+    background: #0a4ea1;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: background 0.3s;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-weight: 500; /* Peso médio para botões */
+}
+
+.btn-acao:hover {
+    background: #0d3b7a;
+}
+
+/* Caixa de instruções passo a passo */
+.passos {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f0f7ff;
+    border-radius: 8px;
+    border-left: 4px solid #0a4ea1;
+}
+
+.passos h4 {
+    color: #0a4ea1;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.passos ol {
+    margin-left: 20px;
+    margin-bottom: 10px;
+}
+
+.passos ol li {
+    font-weight: 400;
+    line-height: 1.8;
+}
+
+.passos p {
+    font-weight: 400;
+}
+
+.passos small {
+    font-weight: 400;
+    opacity: 0.85;
+}
+
+/* Seção da ouvidoria com destaque visual */
+.ouvidoria {
+    padding: 40px 20px;
+    text-align: center;
+    background: #f0f7ff;
+    margin: 30px 0;
+}
+
+.ouvidoria h2 {
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.ouvidoria p {
+    font-weight: 400;
+}
+
+.ouvidoria small {
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+.btn-ouvidoria {
+    display: inline-block;
+    padding: 15px 30px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    margin-top: 15px;
+    transition: background 0.3s;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+    font-weight: 600; /* Semi-bold para destaque */
+}
+
+.btn-ouvidoria:hover {
+    background: #218838;
+}
+
+/* ESTILO MAPA*/
+.mapa-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.mapa-container h2 {
+    font-weight: 700;
+    letter-spacing: -0.3px;
+}
+
+.mapa-container small {
+    font-weight: 400;
+    opacity: 0.8;
+}
+
+#mapa {
+    height: 450px;                    
+    max-width: 1200px;               
+    margin: 20px auto;               
+    border-radius: 12px;            
+    box-shadow: 0 4px 15px #0000001a; 
+}
+
+
+
+/* Rodapé */
+footer {
+    background: #222;
+    color: white;
+    padding: 25px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+footer p {
+    margin: 5px 0;
+    font-weight: 400;
+    opacity: 0.9;
+}
+
+footer small {
+    font-weight: 400;
+    opacity: 0.7;
+}
+
+footer a {
+    font-weight: 500;
+    color: #4da6ff;
+}
+
+footer a:hover {
+    color: #80c1ff;
+}
