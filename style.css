@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 * {
@@ -7,27 +6,22 @@
     box-sizing: border-box;
 }
 
-
 body {
-   
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     background: #f5f5f5;
     color: #333;
     line-height: 1.6;
-
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    
     transition: all 0.3s ease; /* Transição suave para mudanças de acessibilidade */
 }
-
 
 h1, h2, h3, h4, strong {
     font-weight: 600; 
 }
 
 h1 {
-    letter-spacing: -0.5px; /
+    letter-spacing: -0.5px;
 }
 
 /* Ajuste para o texto do cabeçalho */
@@ -43,7 +37,6 @@ h1 {
     opacity: 0.95;
 }
 
-
 /* Cabeçalho principal com identidade visual */
 header {
     background: linear-gradient(135deg, #0a4ea1, #0d3b7a);
@@ -53,10 +46,7 @@ header {
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* 
-  DIV principal controle de acessibilidade
-
-*/
+/* DIV principal controle de acessibilidade */
 .div-acessibilidade {
     margin-top: 20px;
     background: #ffffff1a;
@@ -90,8 +80,9 @@ header {
     font-weight: 400; /* Peso regular para texto corrido */
 }
 
-
-
+.texto-descricao {
+    display: inline;
+}
 
 /* DIV dos botões */
 .botoes-acessibilidade {
@@ -114,10 +105,8 @@ header {
     color: white;
     transition: all 0.3s;
     min-width: 120px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-weight: 500; /* Peso médio para botões */
 }
-
 
 .botoes-acessibilidade button:hover {
     background: rgba(255, 255, 255, 0.25);
@@ -128,8 +117,6 @@ header {
     outline: 3px solid yellow;
     outline-offset: 2px;
 }
-
-
 
 .simbolo {
     font-size: 24px;
@@ -159,11 +146,72 @@ header {
     font-weight: 500;
 }
 
+/* RESPONSIVIDADE PARA DISPOSITIVOS MÓVEIS */
+@media (max-width: 480px) {
+    .div-acessibilidade {
+        padding: 12px 10px;
+    }
+    
+    .info-acessibilidade {
+        flex-direction: column;
+        text-align: center;
+        padding: 8px;
+    }
+    
+    .texto-info {
+        font-size: 13px;
+        line-height: 1.4;
+    }
+    
+    .texto-descricao {
+        display: block;
+        margin-top: 5px;
+    }
+    
+    .botoes-acessibilidade {
+        gap: 8px;
+        flex-direction: row;
+        flex-wrap: nowrap;
+    }
+    
+    .botoes-acessibilidade button {
+        padding: 10px 8px;
+        min-width: auto;
+        flex: 1;
+        max-width: 110px;
+    }
+    
+    .simbolo {
+        font-size: 20px;
+        margin-bottom: 3px;
+    }
+    
+    .descricao {
+        font-size: 11px;
+        white-space: nowrap;
+    }
+}
 
+/* Para telas muito pequenas */
+@media (max-width: 360px) {
+    .botoes-acessibilidade {
+        gap: 5px;
+    }
+    
+    .botoes-acessibilidade button {
+        padding: 8px 5px;
+    }
+    
+    .simbolo {
+        font-size: 18px;
+    }
+    
+    .descricao {
+        font-size: 10px;
+    }
+}
 
-/* 
- Evento botao alto contraste 
-*/
+/* Evento botao alto contraste */
 .alto-contraste {
     background: black !important;
     color: white !important;
@@ -203,9 +251,6 @@ header {
     border-color: yellow;
 }
 
-
-
-/* Seção de busca com destaque */
 .busca {
     padding: 40px 20px;
     text-align: center;
@@ -217,8 +262,10 @@ header {
 .busca h2 {
     margin-bottom: 20px;
     color: #0a4ea1;
-    font-weight: 700; /* Título da busca em negrito total */
+    font-weight: 700; 
     letter-spacing: -0.3px;
+    
+    
 }
 
 #pesquisa {
@@ -230,8 +277,6 @@ header {
     border-radius: 10px;
     outline: none;
     transition: border-color 0.3s;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
-    font-weight: 400;
 }
 
 #pesquisa:focus {
@@ -242,10 +287,9 @@ header {
     margin-top: 10px;
     color: #666;
     font-size: 14px;
-    font-weight: 400;
 }
 
-/* Grid responsivo para os cards de serviços */
+/* ESTILOS SECTION  SERVIÇOS*/
 #servicos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -255,21 +299,18 @@ header {
     margin: 0 auto;
 }
 
-
-
-
-
-/* Estilo individual de cada card */
 .card {
-    background: white;
+    background: #fff;
+    border-radius: 16px;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-    transition: transform 0.3s;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    border-top: 5px solid #0a4ea1;
+    transition: all .3s ease;
 }
 
 .card:hover {
-    transform: translateY(-3px); /* Efeito de elevação no hover */
+    transform: translateY(-6px);
+    box-shadow: 0 12px 30px rgba(0,0,0,.12);
 }
 
 .card h3 {
@@ -281,13 +322,43 @@ header {
 }
 
 .card p {
-    font-weight: 400;
     line-height: 1.6;
 }
 
-/* Botões de ação dentro dos cards */
+.card-topo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.categoria {
+    background: #eaf3ff;
+    color: #0a4ea1;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.descricao-servico {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.acoes {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
+}
+
+
 .btn-acao {
     display: inline-block;
+    flex: 1;
+    min-width: 130px;
     margin: 8px 5px;
     padding: 12px 18px;
     background: #0a4ea1;
@@ -295,8 +366,8 @@ header {
     text-decoration: none;
     border-radius: 8px;
     font-size: 14px;
+    text-align: center;
     transition: background 0.3s;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-weight: 500; /* Peso médio para botões */
 }
 
@@ -304,7 +375,6 @@ header {
     background: #0d3b7a;
 }
 
-/* Caixa de instruções passo a passo */
 .passos {
     margin-top: 20px;
     padding: 15px;
@@ -315,34 +385,69 @@ header {
 
 .passos h4 {
     color: #0a4ea1;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
 .passos ol {
-    margin-left: 20px;
-    margin-bottom: 10px;
+    list-style: none;
+    counter-reset: item;
+    margin: 0;
+    padding: 0;
 }
 
-.passos ol li {
-    font-weight: 400;
+.passos li {
+    counter-increment: item;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 15px;
     line-height: 1.8;
 }
 
-.passos p {
-    font-weight: 400;
+.passos li::before {
+    content: counter(item);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: #0a4ea1;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
 }
 
 .passos small {
-    font-weight: 400;
     opacity: 0.85;
 }
 
-/* Seção da ouvidoria com destaque visual */
+.orgao {
+    margin-top: 20px;
+    padding: 12px;
+    background: #eef7ff;
+    border-radius: 8px;
+    color: #0a4ea1;
+    font-weight: 600;
+    text-align: center;
+}
+
+.dica {
+    margin-top: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+
+
+/* ESTILO SECTION OUVIDORIA */
 .ouvidoria {
     padding: 40px 20px;
     text-align: center;
-    background: yellow;
+    background: #f0f7ff;
     margin: 30px 0;
 }
 
@@ -351,12 +456,7 @@ header {
     letter-spacing: -0.3px;
 }
 
-.ouvidoria p {
-    font-weight: 400;
-}
-
 .ouvidoria small {
-    font-weight: 400;
     opacity: 0.8;
 }
 
@@ -370,7 +470,6 @@ header {
     font-size: 18px;
     margin-top: 15px;
     transition: background 0.3s;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
     font-weight: 600; /* Semi-bold para destaque */
 }
 
@@ -378,7 +477,9 @@ header {
     background: #218838;
 }
 
-/* ESTILO MAPA*/
+
+
+/* ESTILO MAPA */
 .mapa-container {
     text-align: center;
     padding: 20px;
@@ -390,7 +491,6 @@ header {
 }
 
 .mapa-container small {
-    font-weight: 400;
     opacity: 0.8;
 }
 
@@ -402,9 +502,7 @@ header {
     box-shadow: 0 4px 15px #0000001a; 
 }
 
-
-
-/* Rodapé */
+/* ESTILO RODAPÉ */
 footer {
     background: #222;
     color: white;
@@ -415,12 +513,10 @@ footer {
 
 footer p {
     margin: 5px 0;
-    font-weight: 400;
     opacity: 0.9;
 }
 
 footer small {
-    font-weight: 400;
     opacity: 0.7;
 }
 
@@ -432,3 +528,20 @@ footer a {
 footer a:hover {
     color: #80c1ff;
 }
+
+/* Responsividade para cards */
+@media (max-width: 768px) {
+    .card-topo {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .acoes {
+        flex-direction: column;
+    }
+
+    .btn-acao {
+        width: 100%;
+    }
+}
+
