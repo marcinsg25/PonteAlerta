@@ -1,6 +1,3 @@
-
-
-
 // CAMPO PESQUISA
 const campoPesquisa = document.getElementById("pesquisa");
 
@@ -55,9 +52,7 @@ document.getElementById("contraste").onclick = () => {
 };
 
 
-
-/// DIVA MAPA
-
+/// MAPA/////////
 // INICIA COORDENADAS MAPA + ZOOM
 const mapa = L.map('mapa').setView([-15.9672, -48.0451], 14);
 
